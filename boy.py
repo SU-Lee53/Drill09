@@ -143,8 +143,8 @@ class StateMachine:
         self.cur_state = Sleep
         self.transitions = {
             Idle: {a_down: AutoRun, right_down: Run, left_down: Run, right_up: Run, left_up: Run, time_out: Sleep},
-            Run: {a_down: AutoRun, right_down: Idle, left_down: Idle, right_up: Idle, left_up: Idle},
-            Sleep: {a_down: AutoRun, right_down: Run, left_down: Run, right_up: Run, left_up: Run, space_down: Idle},
+            Run: {right_down: Idle, left_down: Idle, right_up: Idle, left_up: Idle},
+            Sleep: {right_down: Run, left_down: Run, right_up: Run, left_up: Run, space_down: Idle},
             AutoRun: {right_down: Run, left_down: Run, right_up: Run, left_up: Run, time_out: Idle}
         }
 
